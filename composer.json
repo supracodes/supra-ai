@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^8.1",
+        "laminas/laminas-text": "^2.5",
         "laravel-zero/framework": "^10.0",
         "laravel-zero/phar-updater": "^1.3",
         "nunomaduro/termwind": "^1.15"
@@ -24,7 +25,8 @@
     "require-dev": {
         "laravel/pint": "^1.5",
         "mockery/mockery": "^1.5.1",
-        "pestphp/pest": "^1.22.3"
+        "pestphp/pest": "^1.22.3",
+        "supracodes/laravel-pot": "*"
     },
     "autoload": {
         "psr-4": {
@@ -51,5 +53,14 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "bin": ["gpt"]
+    "bin": ["gpt"],
+    "repositories": [
+        {
+            "url": "./packages/*",
+            "type": "path",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
 }

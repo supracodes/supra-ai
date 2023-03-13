@@ -15,6 +15,10 @@ $app = new LaravelZero\Framework\Application(
     dirname(__DIR__)
 );
 
+//$app->bind('path.base', function (\LaravelZero\Framework\Application $application) {
+//    return $application->environment(['development']) ? ''
+//});
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Gpt',
+    'name' => 'Supra AI',
 
     /*
     |--------------------------------------------------------------------------
@@ -68,6 +68,7 @@ return [
 
     'providers' => [
         App\Providers\AppServiceProvider::class,
+        App\Providers\ConfigServiceProvider::class
     ],
 
 ];
