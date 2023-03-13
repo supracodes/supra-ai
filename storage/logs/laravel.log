@@ -597,3 +597,175 @@
 #26 /home/supra/private/gpt/gpt(35): LaravelZero\\Framework\\Kernel->handle()
 #27 {main}
 "} 
+[2023-03-13 22:35:25] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [default] is not defined. at /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(664): Illuminate\\Log\\LogManager->driver()
+#3 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Exceptions/Handler.php(274): Illuminate\\Log\\LogManager->error()
+#4 /home/supra/tools/supra-ai/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#5 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(454): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#6 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(157): Illuminate\\Foundation\\Console\\Kernel->reportException()
+#7 /home/supra/tools/supra-ai/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 /home/supra/tools/supra-ai/gpt(35): LaravelZero\\Framework\\Kernel->handle()
+#9 {main}
+"} 
+[2023-03-13 22:35:25] laravel.ERROR: App\Commands\ChatCommand::lastQuestion(): Return value must be of type string, array returned {"exception":"[object] (TypeError(code: 0): App\\Commands\\ChatCommand::lastQuestion(): Return value must be of type string, array returned at /home/supra/tools/supra-ai/app/Commands/ChatCommand.php:77)
+[stacktrace]
+#0 /home/supra/tools/supra-ai/app/Commands/ChatCommand.php(72): App\\Commands\\ChatCommand->lastQuestion()
+#1 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Commands\\ChatCommand->handle()
+#2 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#4 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#5 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/Container.php(661): Illuminate\\Container\\BoundMethod::call()
+#6 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Command.php(194): Illuminate\\Container\\Container->call()
+#7 /home/supra/tools/supra-ai/vendor/symfony/console/Command/Command.php(312): Illuminate\\Console\\Command->execute()
+#8 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Command.php(163): Symfony\\Component\\Console\\Command\\Command->run()
+#9 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(1022): Illuminate\\Console\\Command->run()
+#10 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand()
+#11 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(168): Symfony\\Component\\Console\\Application->doRun()
+#12 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Application.php(102): Symfony\\Component\\Console\\Application->run()
+#13 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(155): Illuminate\\Console\\Application->run()
+#14 /home/supra/tools/supra-ai/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\\Foundation\\Console\\Kernel->handle()
+#15 /home/supra/tools/supra-ai/gpt(35): LaravelZero\\Framework\\Kernel->handle()
+#16 {main}
+"} 
+[2023-03-13 22:55:33] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [default] is not defined. at /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(664): Illuminate\\Log\\LogManager->driver()
+#3 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Exceptions/Handler.php(274): Illuminate\\Log\\LogManager->error()
+#4 /home/supra/tools/supra-ai/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#5 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(454): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#6 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(157): Illuminate\\Foundation\\Console\\Kernel->reportException()
+#7 /home/supra/tools/supra-ai/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 /home/supra/tools/supra-ai/gpt(35): LaravelZero\\Framework\\Kernel->handle()
+#9 {main}
+"} 
+[2023-03-13 22:55:33] laravel.ERROR: App\Commands\ChatCommand::App\Commands\{closure}(): Argument #1 ($content) must be of type Illuminate\Support\Stringable, string given {"exception":"[object] (TypeError(code: 0): App\\Commands\\ChatCommand::App\\Commands\\{closure}(): Argument #1 ($content) must be of type Illuminate\\Support\\Stringable, string given at /home/supra/tools/supra-ai/app/Commands/ChatCommand.php:78)
+[stacktrace]
+#0 [internal function]: App\\Commands\\ChatCommand->App\\Commands\\{closure}()
+#1 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Collections/Arr.php(558): array_map()
+#2 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(770): Illuminate\\Support\\Arr::map()
+#3 /home/supra/tools/supra-ai/app/Commands/ChatCommand.php(78): Illuminate\\Support\\Collection->map()
+#4 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Commands\\ChatCommand->handle()
+#5 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#7 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#8 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/Container.php(661): Illuminate\\Container\\BoundMethod::call()
+#9 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Command.php(194): Illuminate\\Container\\Container->call()
+#10 /home/supra/tools/supra-ai/vendor/symfony/console/Command/Command.php(312): Illuminate\\Console\\Command->execute()
+#11 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Command.php(163): Symfony\\Component\\Console\\Command\\Command->run()
+#12 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(1022): Illuminate\\Console\\Command->run()
+#13 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand()
+#14 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(168): Symfony\\Component\\Console\\Application->doRun()
+#15 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Application.php(102): Symfony\\Component\\Console\\Application->run()
+#16 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(155): Illuminate\\Console\\Application->run()
+#17 /home/supra/tools/supra-ai/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\\Foundation\\Console\\Kernel->handle()
+#18 /home/supra/tools/supra-ai/gpt(35): LaravelZero\\Framework\\Kernel->handle()
+#19 {main}
+"} 
+[2023-03-13 23:00:01] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [default] is not defined. at /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(664): Illuminate\\Log\\LogManager->driver()
+#3 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Exceptions/Handler.php(274): Illuminate\\Log\\LogManager->error()
+#4 /home/supra/tools/supra-ai/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#5 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(454): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#6 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(157): Illuminate\\Foundation\\Console\\Kernel->reportException()
+#7 /home/supra/tools/supra-ai/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 /home/supra/tools/supra-ai/gpt(35): LaravelZero\\Framework\\Kernel->handle()
+#9 {main}
+"} 
+[2023-03-13 23:00:01] laravel.ERROR: The command "'/home/supra/.nvm/versions/node/v18.14.0/bin/node' 'shiki.js' '["\n\nAs an AI language model, I am not authorized to send emails. However, here is the code that can be used to send an email with SMTP relay using Nodemailer:\n\n```javascript\nconst nodemailer = require('\''nodemailer'\'');\n\n\/\/ create transporter object using SMTP relay\nconst transporter = nodemailer.createTransport({\n  host: '\''smtp-relay.gmail.com'\'',\n  port: 465,\n  secure: true,\n  auth: {\n    user: '\''your-email@your-domain.com'\'',\n    pass: '\''your-email-password'\''\n  },\n  debug: true,\n  logger: true\n});\n\n\/\/ setup email data\nconst mailOptions = {\n  from: '\''your-email@your-domain.com'\'',\n  to: '\''recipient-email@recipient-domain.com'\'',\n  subject: '\''Test email from Nodemailer'\'',\n  text: '\''Hello world!'\'',\n  html: '\''<b>Hello world!<\/b>'\''\n};\n\n\/\/ send email\ntransporter.sendMail(mailOptions, (error, info) => {\n  if (error) {\n    console.log(error);\n  } else {\n    console.log('\''Email sent: '\'' + info.response);\n  }\n});\n```\n\nMake sure to replace the values for `host`, `user`, and `pass` with your own SMTP relay configuration details. Also, update the `from` and `to` email addresses as needed. Finally, customize the subject, text, and HTML content of the email to meet your needs.","php","nord",{"highlightLines":[],"addLines":[],"deleteLines":[],"focusLines":[]}]'" failed.
+
+Exit Code: 1(General error)
+
+Working directory: /home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin
+
+Output:
+================
+
+
+Error Output:
+================
+node:internal/modules/cjs/loader:1050
+  throw err;
+  ^
+
+Error: Cannot find module 'shiki'
+Require stack:
+- /home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin/shiki.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1047:15)
+    at Module._load (node:internal/modules/cjs/loader:893:27)
+    at Module.require (node:internal/modules/cjs/loader:1113:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin/shiki.js:1:15)
+    at Module._compile (node:internal/modules/cjs/loader:1226:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1280:10)
+    at Module.load (node:internal/modules/cjs/loader:1089:32)
+    at Module._load (node:internal/modules/cjs/loader:930:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin/shiki.js' ]
+}
+
+Node.js v18.14.0
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"'/home/supra/.nvm/versions/node/v18.14.0/bin/node' 'shiki.js' '[\"\\n\\nAs an AI language model, I am not authorized to send emails. However, here is the code that can be used to send an email with SMTP relay using Nodemailer:\\n\\n```javascript\\nconst nodemailer = require('\\''nodemailer'\\'');\\n\\n\\/\\/ create transporter object using SMTP relay\\nconst transporter = nodemailer.createTransport({\\n  host: '\\''smtp-relay.gmail.com'\\'',\\n  port: 465,\\n  secure: true,\\n  auth: {\\n    user: '\\''your-email@your-domain.com'\\'',\\n    pass: '\\''your-email-password'\\''\\n  },\\n  debug: true,\\n  logger: true\\n});\\n\\n\\/\\/ setup email data\\nconst mailOptions = {\\n  from: '\\''your-email@your-domain.com'\\'',\\n  to: '\\''recipient-email@recipient-domain.com'\\'',\\n  subject: '\\''Test email from Nodemailer'\\'',\\n  text: '\\''Hello world!'\\'',\\n  html: '\\''<b>Hello world!<\\/b>'\\''\\n};\\n\\n\\/\\/ send email\\ntransporter.sendMail(mailOptions, (error, info) => {\\n  if (error) {\\n    console.log(error);\\n  } else {\\n    console.log('\\''Email sent: '\\'' + info.response);\\n  }\\n});\\n```\\n\\nMake sure to replace the values for `host`, `user`, and `pass` with your own SMTP relay configuration details. Also, update the `from` and `to` email addresses as needed. Finally, customize the subject, text, and HTML content of the email to meet your needs.\",\"php\",\"nord\",{\"highlightLines\":[],\"addLines\":[],\"deleteLines\":[],\"focusLines\":[]}]'\" failed.
+
+Exit Code: 1(General error)
+
+Working directory: /home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin
+
+Output:
+================
+
+
+Error Output:
+================
+node:internal/modules/cjs/loader:1050
+  throw err;
+  ^
+
+Error: Cannot find module 'shiki'
+Require stack:
+- /home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin/shiki.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1047:15)
+    at Module._load (node:internal/modules/cjs/loader:893:27)
+    at Module.require (node:internal/modules/cjs/loader:1113:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (/home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin/shiki.js:1:15)
+    at Module._compile (node:internal/modules/cjs/loader:1226:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1280:10)
+    at Module.load (node:internal/modules/cjs/loader:1089:32)
+    at Module._load (node:internal/modules/cjs/loader:930:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/supra/tools/supra-ai/vendor/spatie/shiki-php/bin/shiki.js' ]
+}
+
+Node.js v18.14.0
+ at /home/supra/tools/supra-ai/vendor/spatie/shiki-php/src/Shiki.php:114)
+[stacktrace]
+#0 /home/supra/tools/supra-ai/vendor/spatie/shiki-php/src/Shiki.php(82): Spatie\\ShikiPhp\\Shiki->callShiki()
+#1 /home/supra/tools/supra-ai/vendor/spatie/shiki-php/src/Shiki.php(32): Spatie\\ShikiPhp\\Shiki->highlightCode()
+#2 /home/supra/tools/supra-ai/app/Commands/ChatCommand.php(75): Spatie\\ShikiPhp\\Shiki::highlight()
+#3 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Commands\\ChatCommand->handle()
+#4 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#6 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#7 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Container/Container.php(661): Illuminate\\Container\\BoundMethod::call()
+#8 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Command.php(194): Illuminate\\Container\\Container->call()
+#9 /home/supra/tools/supra-ai/vendor/symfony/console/Command/Command.php(312): Illuminate\\Console\\Command->execute()
+#10 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Command.php(163): Symfony\\Component\\Console\\Command\\Command->run()
+#11 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(1022): Illuminate\\Console\\Command->run()
+#12 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand()
+#13 /home/supra/tools/supra-ai/vendor/symfony/console/Application.php(168): Symfony\\Component\\Console\\Application->doRun()
+#14 /home/supra/tools/supra-ai/vendor/laravel/framework/src/Illuminate/Console/Application.php(102): Symfony\\Component\\Console\\Application->run()
+#15 /home/supra/tools/supra-ai/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(155): Illuminate\\Console\\Application->run()
+#16 /home/supra/tools/supra-ai/vendor/laravel-zero/framework/src/Kernel.php(96): Illuminate\\Foundation\\Console\\Kernel->handle()
+#17 /home/supra/tools/supra-ai/gpt(35): LaravelZero\\Framework\\Kernel->handle()
+#18 {main}
+"} 

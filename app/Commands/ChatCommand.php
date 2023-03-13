@@ -4,10 +4,12 @@ namespace App\Commands;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Stringable;
 use LaravelZero\Framework\Commands\Command;
 use OpenAI\Laravel\Facades\OpenAI;
 use OpenAI\Responses\Chat\CreateResponse;
 use OpenAI\Responses\Models\RetrieveResponse;
+use Spatie\ShikiPhp\Shiki;
 use function Termwind\render;
 use function Termwind\terminal;
 
@@ -36,10 +38,11 @@ class ChatCommand extends Command
         parent::__construct();
 
         $this->questions = collect();
-        $this->models = collect(OpenAI::models()->list()->data)
-            ->filter(fn (RetrieveResponse $model) => str($model->id)->contains('3.5'))
-            ->map(fn (RetrieveResponse $model) => $model->id)
-            ->values();
+//        $this->models = collect(OpenAI::models()->list()->data)
+//            ->filter(fn (RetrieveResponse $model) => str($model->id)->contains('3.5'))
+//            ->map(fn (RetrieveResponse $model) => $model->id)
+//            ->values();
+        $this->models = collect([]);
     }
 
     /**
@@ -49,30 +52,51 @@ class ChatCommand extends Command
      */
     public function handle(): void
     {
-        $model = $this->choice('Which model do you want to use?', $this->models->toArray(), 0);
+//        $model = $this->choice('Which model do you want to use?', $this->models->toArray(), 0);
+//        $model = $this->models->
+        $model = 'gpt-3.5-turbo-0301';
+        $questions = [
+            [
+                'role' => 'user',
+                'content' => $this->argument('question')
+            ]
+        ];
 
         do {
-            $response = $this->askQuestion(
-                $this->ask('Type your question?'),
-                $model
-            );
+            $response = OpenAI::chat()->create([
+                'model' => $model,
+                'messages' => $questions
+            ]);
 
             terminal()->clear();
 
             foreach ($response->choices as $choice) {
                 $align = $choice->message->role === 'user' ? 'left' : 'right';
+                $content = Shiki::highlight(
+                    code: $choice->message->content,
+                );
 
                 render(<<<HTML
-                    <div class="p-1">
-                        <div class="text-{$align}">{$choice->message->content}</div>
-                        <div class="text-{$align}">{$choice->message->content}</div>
-                    </div>
+                    <div class="p-1">{$content}</div>
                 HTML);
+
+                $questions = [
+                    ...$questions,
+                    [
+                        'role' => $choice->message->role,
+                        'content' => $choice->message->content
+                    ]
+                ];
             }
+
+            $questions[] = [
+                'role' => 'user',
+                'content' => $this->ask('What do you want to say?')
+            ];
         } while($this->lastQuestion() != '!stop');
     }
 
-    private function lastQuestion(): string
+    private function lastQuestion()
     {
         return $this->questions->last();
     }
