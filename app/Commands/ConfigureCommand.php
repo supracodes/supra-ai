@@ -4,6 +4,7 @@ namespace App\Commands;
 
 use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
+use function Termwind\render;
 
 class ConfigureCommand extends Command
 {
@@ -12,7 +13,11 @@ class ConfigureCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'configure {--config= : The path to the configuration file}';
+    protected $signature = <<<SIGNATURE
+        configure {--api-key= : The Open AI Apikey} 
+                  {--org= : Identifier for this organization} 
+                  {--config= : The path to the configuration file}
+    SIGNATURE;
 
     /**
      * The description of the command.
@@ -28,23 +33,33 @@ class ConfigureCommand extends Command
  */
     public function handle(): void
     {
-        $apiKey = $this->ask('What is your OpenAI API key? (https://platform.openai.com/account/api-keys)');
+        if (!$apiKey = $this->option('api-key')) {
+            $apiKey = $this->ask('What is your OpenAI API key? (https://platform.openai.com/account/api-keys)');
+        }
+
+        if (!$organization = $this->option('org')) {
+            $organization = $this->ask('What is your OpenAI organization? (https://platform.openai.com/account/org-settings)');
+        }
 
         $configFile = $this->option('config') ?? base_path('config.json');
-
-        if (file_exists($configFile)) {
-            $this->confirm('Configuration file already exists. Overwrite?', true);
-        }
 
         file_put_contents(
             $configFile,
             json_encode([
                 'openai' => [
                     'api_key' => $apiKey,
+                    'organization' => $organization
                 ],
             ], JSON_PRETTY_PRINT)
         );
 
-        $this->info("Configuration saved at " . $configFile);
+        render(<<<HTML
+            <div class="m-1">
+                <div class="text-green-500">Configuration saved</div>
+                <div>
+                    The configuration file is located at <a href="{$configFile}" class="font-bold text-yellow-500 underline">$configFile</a>
+                </div>
+            </div>
+        HTML);
     }
 }

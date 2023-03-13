@@ -68,7 +68,8 @@ return [
 
     'providers' => [
         App\Providers\AppServiceProvider::class,
-        App\Providers\ConfigServiceProvider::class
+        App\Providers\ConfigServiceProvider::class,
+        App\Providers\OpenAIServiceProvider::class
     ],
 
 ];
