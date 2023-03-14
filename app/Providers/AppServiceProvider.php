@@ -13,14 +13,14 @@ class AppServiceProvider extends ServiceProvider
     {
         if (app()->environment(['development'])) {
             if (app()->runningInConsole()) {
-                $this->app->register(\NunoMaduro\LaravelPot\PotServiceProvider::class);
+                //
             }
         }
 
-
-        $this->app->bind('path.base', function () {
-            return app()->environment(['development']) ? base_path() : getenv('HOME') . '/.supracodes/gpt';
-        });
+        config(['logging.channels.single.path' => \Phar::running()
+            ? dirname(\Phar::running(false)) . '/desired-path/your-app.log'
+            : storage_path('logs/your-app.log')
+        ]);
     }
 
     /**

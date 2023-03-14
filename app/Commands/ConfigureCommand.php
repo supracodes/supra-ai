@@ -41,7 +41,7 @@ class ConfigureCommand extends Command
             $organization = $this->ask('What is your OpenAI organization? (https://platform.openai.com/account/org-settings)');
         }
 
-        $configFile = $this->option('config') ?? base_path('config.json');
+        $configFile = $this->option('config') ?? home_path('config.json');
 
         file_put_contents(
             $configFile,

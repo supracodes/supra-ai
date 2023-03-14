@@ -1,1 +1,1 @@
-<?php
+<?phpif (!function_exists('home_path')) {    function home_path(string $path): string    {        $homeDir = app()->environment(['development'])            ? base_path()            : getenv('HOME') . '/.supra';        if (!is_dir($homeDir)) {            @mkdir($homeDir, 0777, true);        }        $path = str($path);        return (string) ($path->startsWith('/')            ? $path->prepend($homeDir)            : $path->prepend($homeDir . '/'));    }}

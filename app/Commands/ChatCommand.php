@@ -2,6 +2,7 @@
 
 namespace App\Commands;
 
+use Ahc\CliSyntax\Highlighter;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Stringable;
@@ -9,6 +10,8 @@ use LaravelZero\Framework\Commands\Command;
 use OpenAI\Laravel\Facades\OpenAI;
 use OpenAI\Responses\Chat\CreateResponse;
 use OpenAI\Responses\Models\RetrieveResponse;
+use PhpPkg\CliMarkdown\CliMarkdown;
+use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Spatie\ShikiPhp\Shiki;
 use function Termwind\render;
 use function Termwind\terminal;
@@ -52,9 +55,8 @@ class ChatCommand extends Command
      */
     public function handle(): void
     {
-//        $model = $this->choice('Which model do you want to use?', $this->models->toArray(), 0);
-//        $model = $this->models->
         $model = 'gpt-3.5-turbo-0301';
+
         $questions = [
             [
                 'role' => 'user',
@@ -62,36 +64,44 @@ class ChatCommand extends Command
             ]
         ];
 
+        $clear = function () {
+            terminal()->clear();
+        };
+
         do {
+            render(<<<HTML
+                <div class="p-1">
+                    <span>Asking question:</span>
+                    <span class="text-yellow-500 ml-1 italic">Please wait...</span>
+                </div>
+            HTML);
+
             $response = OpenAI::chat()->create([
                 'model' => $model,
                 'messages' => $questions
             ]);
 
-            terminal()->clear();
+            $clear();
 
             foreach ($response->choices as $choice) {
-                $align = $choice->message->role === 'user' ? 'left' : 'right';
-                $content = Shiki::highlight(
-                    code: $choice->message->content,
-                );
+                $responseText = $choice->message->content;
+                $markdownResponse = app(CliMarkdown::class)->render($responseText);
 
-                render(<<<HTML
-                    <div class="p-1">{$content}</div>
-                HTML);
+                $this->newLine(2);
+                $this->line($markdownResponse);
 
                 $questions = [
                     ...$questions,
                     [
                         'role' => $choice->message->role,
-                        'content' => $choice->message->content
+                        'content' => $responseText
                     ]
                 ];
             }
 
             $questions[] = [
                 'role' => 'user',
-                'content' => $this->ask('What do you want to say?')
+                'content' => $this->ask('Type your next question')
             ];
         } while($this->lastQuestion() != '!stop');
     }

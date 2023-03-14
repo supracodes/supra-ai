@@ -1,36 +1,38 @@
 {
-    "name": "laravel-zero/laravel-zero",
-    "description": "The Laravel Zero Framework.",
-    "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
-    "homepage": "https://laravel-zero.com",
+    "name": "supracodes/gpt",
+    "description": "Chat gpt with your terminal",
+    "keywords": [
+        "gpt",
+        "chat",
+        "terminal",
+        "cli",
+        "php"
+    ],
+    "homepage": "https://supra.codes",
     "type": "project",
     "license": "MIT",
-    "support": {
-        "issues": "https://github.com/laravel-zero/laravel-zero/issues",
-        "source": "https://github.com/laravel-zero/laravel-zero"
-    },
     "authors": [
         {
-            "name": "Nuno Maduro",
-            "email": "enunomaduro@gmail.com"
+            "name": "Supra Codes",
+            "email": "dev@supra.codes",
+            "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
+        "illuminate/log": "^10.0"
+    },
+    "require-dev": {
         "laminas/laminas-text": "^2.5",
         "laravel-zero/framework": "^10.0",
         "laravel-zero/phar-updater": "^1.3",
         "nunomaduro/termwind": "^1.15",
         "openai-php/laravel": "^0.3.4",
+        "phppkg/cli-markdown": "^2.0",
         "spatie/laravel-data": "^3.1",
-        "spatie/shiki-php": "^1.3"
-    },
-    "require-dev": {
         "laravel/pint": "^1.5",
         "mockery/mockery": "^1.5.1",
-        "pestphp/pest": "^1.22.3",
-        "supracodes/laravel-pot": "*",
-        "supracodes/laravel-console-task": "*"
+        "pestphp/pest": "^1.22.3"
     },
     "autoload": {
         "psr-4": {
@@ -57,7 +59,7 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "bin": ["gpt"],
+    "bin": ["builds/gpt"],
     "repositories": [
         {
             "url": "./packages/*",
