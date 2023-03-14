@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-composer create-project supracodes/gpt
+composer global require supracodes/gpt
 ```
 
 ## Usage
